@@ -40,3 +40,14 @@ class HomePage(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ExchangeProgram(models.Model):
+    university = models.CharField(max_length=255)
+    languages = models.CharField(max_length=255)
+    places = models.CharField(max_length=255)
+    deadline = models.DateField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.university
