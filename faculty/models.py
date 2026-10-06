@@ -46,7 +46,7 @@ class ExchangeProgram(models.Model):
     university = models.CharField(max_length=255)
     country = models.CharField(max_length=255, default="")
     languages = models.CharField(max_length=255)
-    places = models.CharField(max_length=255)
+    places_count = models.IntegerField(null=True, blank=True)
     deadline = models.DateField()
     description = models.TextField()
 
