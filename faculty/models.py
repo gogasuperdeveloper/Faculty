@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Department(models.Model):
@@ -49,6 +50,9 @@ class ExchangeProgram(models.Model):
     places_count = models.IntegerField(null=True, blank=True)
     deadline = models.DateField()
     description = models.TextField()
+
+    def is_open(self):
+        return self.deadline >= timezone.now().date()
 
     def __str__(self):
         return self.university

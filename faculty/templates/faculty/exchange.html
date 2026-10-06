@@ -11,6 +11,11 @@
         <p>Мови навчання: {{ program.languages }}</p>
         <p>Кількість місць: {{ program.places_count }}</p>
         <p>Дедлайн подачі: {{ program.deadline|date:"d.m.Y" }}</p>
+        {% if program.is_open %}
+        <p class="status-open">Прийом триває</p>
+        {% else %}
+        <p class="status-closed">Прийом завершено</p>
+        {% endif %}
         <p>{{ program.description }}</p>
     </article>
     {% empty %}
