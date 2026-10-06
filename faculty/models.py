@@ -44,6 +44,7 @@ class HomePage(models.Model):
 
 class ExchangeProgram(models.Model):
     university = models.CharField(max_length=255)
+    country = models.CharField(max_length=255, default="")
     languages = models.CharField(max_length=255)
     places = models.CharField(max_length=255)
     deadline = models.DateField()

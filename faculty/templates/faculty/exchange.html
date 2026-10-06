@@ -7,6 +7,7 @@
     {% for program in programs %}
     <article>
         <h2>{{ program.university }}</h2>
+        <p>Країна: {{ program.country }}</p>
         <p>Мови навчання: {{ program.languages }}</p>
         <p>Кількість місць: {{ program.places }}</p>
         <p>Дедлайн подачі: {{ program.deadline|date:"d.m.Y" }}</p>
