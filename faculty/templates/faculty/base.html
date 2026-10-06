@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Факультет міжнародних відносин та врядування{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, Arial, sans-serif; color: #1b1f3b; background: #f5f6fa; line-height: 1.6; }
+        header { background: #1b2a55; padding: 16px 24px; }
+        nav { max-width: 900px; margin: 0 auto; display: flex; gap: 24px; }
+        nav a { color: #fff; text-decoration: none; font-weight: 600; }
+        nav a:hover { color: #a8c0ff; }
+        main { max-width: 900px; margin: 32px auto; padding: 0 24px; }
+        h1 { color: #1b2a55; margin-bottom: 16px; }
+        h2 { color: #23336b; margin: 20px 0 8px; }
+        article { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+        article a { color: #1b2a55; text-decoration: none; }
+        article a:hover { text-decoration: underline; }
+        section { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+        ul { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'faculty:home' %}">Головна</a>
+            <a href="{% url 'faculty:departments' %}">Кафедри</a>
+            <a href="{% url 'faculty:programs' %}">Спеціальності</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
