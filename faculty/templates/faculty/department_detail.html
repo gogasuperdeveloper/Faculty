@@ -1,0 +1,28 @@
+{% extends "faculty/base.html" %}
+
+{% block title %}{{ department.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ department.name }}</h1>
+    <p>Завідувач кафедри: {{ department.head }}</p>
+    <section>
+        <h2>Випускові спеціальності</h2>
+        <ul>
+            {% for program in department.program_set.all %}
+            <li><a href="{% url 'faculty:program_detail' program.id %}">{{ program.name }}</a></li>
+            {% empty %}
+            <li>—</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Викладачі</h2>
+        <ul>
+            {% for teacher in department.teacher_set.all %}
+            <li>{{ teacher.name }} — {{ teacher.position }}, {{ teacher.degree }}</li>
+            {% empty %}
+            <li>Викладачів ще не додано.</li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
